@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700");
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+@media (max-width: 351px) {
+    .query{
+        margin-top: 10px;
+    }
+ }
