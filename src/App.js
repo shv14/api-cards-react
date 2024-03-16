@@ -29,7 +29,7 @@ function App() {
         />
         <Routes>
           <Route exact path="/about" element={<About input={inputText} setprogress={setprogress} />} />
-          <Route exact path="/" element={<Home input={inputText} />} />
+          <Route exact path="/api-cards-react" element={<Home input={inputText} />} />
         </Routes>
       </Router>
     </>
