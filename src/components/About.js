@@ -9,7 +9,7 @@ export default function About(props) {
 
   const getnotes = async () => {
     props.setprogress(50)
-    const response = await fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=10`);
+    const response = await fetch(`https://api.escuelajs.co/api/v1/products?offset=${page}&limit=10`);
     const json = await response.json();
     setnotes((prev) => [...prev, ...json])
     console.log(json)
@@ -19,7 +19,7 @@ export default function About(props) {
   const handleInfiniteScroll = async () => {
     try {
       if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
-        setpage((prev) => prev + 1)
+        setpage((prev) => prev + 10)
         console.log(page)
       }
     } catch (error) {
@@ -54,7 +54,7 @@ export default function About(props) {
         <div className="row">
           {filteredData.map((element) => {
             return <div key={element.id} className="col-md-4">
-              <Card image_url={element.image_url} name={element.name} description={element.description} tagline={element.tagline} note={element} />
+              <Card image_url={element.images} name={element.title} description={element.description} tagline={element.price} note={element} />
             </div>
           })}
         </div>
